@@ -1,0 +1,1082 @@
+/* ================================================
+   POSITIVUS — MEDIA QUERIES
+   Add this file AFTER style.css in your HTML:
+   <link rel="stylesheet" href="media-queries.css">
+   Also add before </body>:
+   <script src="hamburger-menu.js"></script>
+   <script src="testimonial-scroll.js"></script>
+   ================================================ */
+
+
+/* ------------------------------------------------
+   HAMBURGER BUTTON (hidden on desktop)
+   ------------------------------------------------ */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    z-index: 1000;
+}
+
+.hamburger span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: #191A23;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* ------------------------------------------------
+   TESTIMONIAL — BUTTON SCROLL (global, all sizes)
+   ------------------------------------------------ */
+
+.testimonial-wrapper {
+    margin: 40px;
+}
+
+.testimonial {
+    background-color: #191A23;
+    border-radius: 45px;
+    padding: 40px 40px 24px 40px;
+    overflow: hidden;
+}
+
+.testimonial-track {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 10px;
+}
+
+.testimonial-track::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonial-block {
+    scroll-snap-align: start;
+    flex: 0 0 606px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.testimonial-block p {
+    font-size: 15px;
+    color: #ffffff;
+    line-height: 1.6;
+    border: none;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.testimonial-block h3 {
+    font-size: 20px;
+    color: #B9FF66;
+    margin-bottom: 4px;
+}
+
+.testimonial-block span {
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+.testimonial-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #333333;
+}
+
+.testimonial-prev,
+.testimonial-next {
+    background: transparent;
+    border: 1px solid #555555;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, border-color 0.2s;
+    flex-shrink: 0;
+}
+
+.testimonial-prev:hover,
+.testimonial-next:hover {
+    color: #B9FF66;
+    border-color: #B9FF66;
+}
+
+.testimonial-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.testimonial-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #555555;
+    cursor: pointer;
+    transition: background 0.2s;
+    border: none;
+    padding: 0;
+}
+
+.testimonial-dots .dot.active {
+    background-color: #B9FF66;
+}
+
+
+/* ------------------------------------------------
+   MACBOOK PRO 16 (2021) — max-width: 1728px
+   Retina renders at 1728 x 1117px logical pixels
+   ------------------------------------------------ */
+@media (min-width: 1025px) and (max-width: 1728px) {
+
+    /* NAV */
+    nav {
+        margin: 30px 60px;
+        height: auto;
+    }
+
+    .nav-links li a {
+        font-size: 18px;
+        padding: 16px;
+    }
+
+    .nav-links button {
+        width: 200px;
+        height: 58px;
+        font-size: 16px;
+    }
+
+    /* HEADER */
+    .header {
+        margin: 30px 60px;
+        height: auto;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .header h1 {
+        font-size: 52px;
+    }
+
+    .header p {
+        font-size: 18px;
+    }
+
+    .header img {
+        width: 480px;
+        height: auto;
+    }
+
+    /* LOGOTYPES */
+    .logotypes {
+        padding: 0 60px;
+        gap: 20px;
+    }
+
+    .logotypes img {
+        width: 110px;
+        height: auto;
+    }
+
+    /* HEADINGS */
+    .heading,
+    .heading2,
+    .heading3,
+    .heading4,
+    .heading5,
+    .heading6 {
+        padding: 0 60px;
+        margin-bottom: 60px;
+    }
+
+    .heading h1,
+    .heading2 h1,
+    .heading3 h1,
+    .heading4 h1,
+    .heading5 h1,
+    .heading6 h1 {
+        font-size: 36px;
+    }
+
+    .heading p,
+    .heading2 p,
+    .heading3 p,
+    .heading4 p,
+    .heading5 p,
+    .heading6 p {
+        font-size: 17px;
+        width: auto;
+        max-width: 560px;
+    }
+
+    /* SERVICES */
+    .service-block {
+        padding: 0 60px;
+        gap: 24px;
+    }
+
+    .card1,
+    .card2,
+    .card3 {
+        padding: 40px;
+        border-radius: 36px;
+    }
+
+    .headlink h1 {
+        font-size: 26px;
+    }
+
+    .ill img {
+        width: 180px;
+        height: auto;
+    }
+
+    /* CTA */
+    .cta {
+        margin: 60px;
+        border-radius: 40px;
+    }
+
+    .cta-block {
+        width: 460px;
+        padding: 40px 50px;
+    }
+
+    .cta-block h3 {
+        font-size: 28px;
+    }
+
+    .cta-block p {
+        font-size: 17px;
+    }
+
+    /* CASE STUDIES */
+    .cta-dark {
+        margin: 40px 60px;
+        border-radius: 40px;
+    }
+
+    .cta-block2 {
+        margin: 60px 40px;
+    }
+
+    .cta-block2 p {
+        font-size: 17px;
+        width: 260px;
+    }
+
+    /* PROCESS */
+    .processcard {
+        margin: 12px 60px;
+        padding: 36px 60px;
+        border-radius: 40px;
+    }
+
+    .content h1 {
+        font-size: 46px;
+    }
+
+    .content p {
+        font-size: 26px;
+    }
+
+    .toggleBtn {
+        width: 44px;
+        height: 44px;
+    }
+
+    .toggleBtn i {
+        font-size: 22px;
+    }
+
+    .text p {
+        font-size: 17px;
+    }
+
+    /* TEAM */
+    .team-grid {
+        margin: 40px 60px;
+        gap: 24px;
+    }
+
+    .card-info h3 {
+        font-size: 17px;
+    }
+
+    .card-bio {
+        font-size: 14px;
+    }
+
+    .card-btn {
+        margin-right: 60px;
+    }
+
+    /* TESTIMONIALS */
+    .testimonial-wrapper {
+        margin: 40px 60px;
+    }
+
+    .testimonial-block {
+        flex: 0 0 560px;
+    }
+
+    .bubble {
+        width: 100%;
+        height: 240px;
+    }
+
+    .bubble p {
+        font-size: 15px;
+    }
+
+    .testimonial-block h3 {
+        font-size: 18px;
+    }
+
+    .testimonial-block span {
+        font-size: 13px;
+    }
+
+    /* CONTACT FORM */
+    .form-container {
+        margin: 40px 60px;
+        padding: 50px;
+        border-radius: 40px;
+    }
+
+    .input,
+    .textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+
+    /* FOOTER */
+    .footer {
+        margin: 0 60px;
+        border-radius: 45px 45px 0 0;
+    }
+
+    .footer-block {
+        padding: 40px 60px;
+    }
+
+    .footer-content {
+        padding: 0 60px;
+    }
+
+    .divider3 {
+        margin: 30px 60px;
+        width: calc(100% - 120px);
+    }
+
+    .privacy {
+        padding: 0 60px;
+    }
+
+    .form {
+        width: 580px;
+    }
+}
+
+
+/* ------------------------------------------------
+   TABLET — max-width: 1024px
+   ------------------------------------------------ */
+@media (max-width: 1024px) {
+
+    /* NAV */
+    nav {
+        position: relative;
+        flex-wrap: nowrap;
+        align-items: center;
+        height: auto;
+        gap: 0;
+        margin: 16px 20px;
+        justify-content: space-between;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        border: 1px solid #191A23;
+        border-radius: 16px;
+        padding: 16px;
+        gap: 4px;
+        z-index: 999;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        font-size: 17px;
+        padding: 12px 16px;
+        display: block;
+        border-radius: 10px;
+        transition: background 0.2s;
+    }
+
+    .nav-links li a:hover {
+        background-color: #f3f3f3;
+    }
+
+    .nav-links button {
+        width: 100%;
+        height: 50px;
+        padding: 12px 16px;
+        margin-top: 8px;
+        border-radius: 10px;
+    }
+
+    /* HEADER */
+    .header {
+        flex-direction: column;
+        height: auto;
+        margin: 20px;
+        gap: 30px;
+    }
+
+    .header h1 {
+        font-size: 44px;
+    }
+
+    .header img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* LOGOTYPES */
+    .logotypes {
+        flex-wrap: wrap;
+        padding: 0 20px;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    /* HEADINGS */
+    .heading,
+    .heading2,
+    .heading3,
+    .heading4,
+    .heading5,
+    .heading6 {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 16px;
+        margin-bottom: 40px;
+    }
+
+    .heading p,
+    .heading2 p,
+    .heading3 p,
+    .heading4 p,
+    .heading5 p,
+    .heading6 p {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+    }
+
+    /* SERVICES */
+    .service-block {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        margin-top: 20px;
+    }
+
+    .card1,
+    .card2,
+    .card3 {
+        flex-direction: column;
+        height: auto;
+        padding: 30px;
+    }
+
+    .ill img {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    /* CTA */
+    .cta {
+        flex-direction: column;
+        height: auto;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .cta-block {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .cta-img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .cta-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* CASE STUDIES */
+    .cta-dark {
+        flex-direction: column;
+        height: auto;
+        margin: 20px;
+        padding: 20px 0;
+    }
+
+    .cta-block2 {
+        width: 100%;
+        margin: 30px auto;
+        padding: 0 30px;
+    }
+
+    .divider {
+        width: 80%;
+        height: 1px;
+        margin: 0 auto;
+    }
+
+    /* PROCESS */
+    .processcard {
+        margin: 12px 20px;
+        padding: 30px 24px;
+        border-radius: 24px;
+    }
+
+    .processcontent {
+        gap: 16px;
+    }
+
+    .content h1 {
+        font-size: 36px;
+    }
+
+    .content p {
+        font-size: 20px;
+    }
+
+    .toggleBtn {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+    .toggleBtn i {
+        font-size: 20px;
+    }
+
+    .text p {
+        font-size: 16px;
+    }
+
+    /* TEAM */
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 20px;
+    }
+
+    .card-btn {
+        float: none;
+        margin: 20px;
+        justify-content: center;
+    }
+
+    /* TESTIMONIALS */
+    .testimonial-wrapper {
+        margin: 20px;
+    }
+
+    .testimonial-block {
+        flex: 0 0 80%;
+    }
+
+    /* CONTACT FORM */
+    .form-container {
+        flex-direction: column;
+        height: auto;
+        margin: 20px;
+        padding: 30px;
+        gap: 30px;
+    }
+
+    .form-container img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        float: none;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .input,
+    .textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+
+    /* FOOTER */
+    .footer {
+        height: auto;
+        margin: 20px;
+        padding-bottom: 20px;
+    }
+
+    .footer-block {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .nav-links1 {
+        flex-wrap: wrap;
+        padding: 0;
+        gap: 4px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .form {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: auto;
+        padding: 20px;
+        gap: 16px;
+    }
+
+    .form input {
+        flex: 1;
+        min-width: 160px;
+    }
+}
+
+
+/* ------------------------------------------------
+   MOBILE — max-width: 768px
+   ------------------------------------------------ */
+@media (max-width: 768px) {
+
+    /* NAV */
+    nav {
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+        margin: 16px;
+        justify-content: space-between;
+    }
+
+    nav h1 {
+        font-size: 24px;
+    }
+
+    nav i {
+        font-size: 24px;
+    }
+
+    .nav-links li a {
+        font-size: 16px;
+        padding: 10px 16px;
+    }
+
+    .nav-links button {
+        width: 100%;
+        height: 48px;
+        margin-top: 8px;
+    }
+
+    /* HEADER */
+    .header {
+        margin: 16px;
+        gap: 20px;
+    }
+
+    .header h1 {
+        font-size: 32px;
+    }
+
+    .header p {
+        font-size: 16px;
+    }
+
+    .header button {
+        width: 100%;
+        padding: 16px;
+    }
+
+    /* LOGOTYPES */
+    .logotypes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 16px;
+        gap: 16px;
+    }
+
+    .logotypes img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* HEADINGS */
+    .heading h1,
+    .heading2 h1,
+    .heading3 h1,
+    .heading4 h1,
+    .heading5 h1,
+    .heading6 h1 {
+        font-size: 28px;
+        height: auto;
+    }
+
+    .heading p,
+    .heading2 p,
+    .heading3 p,
+    .heading4 p,
+    .heading5 p,
+    .heading6 p {
+        font-size: 15px;
+    }
+
+    /* SERVICES */
+    .service-block {
+        padding: 0 16px;
+        gap: 16px;
+    }
+
+    /* CTA */
+    .cta {
+        margin: 16px;
+        border-radius: 24px;
+        padding: 24px 16px;
+    }
+
+    .cta-block {
+        padding: 0;
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+    }
+
+    .cta-block h3 {
+        font-size: 22px;
+    }
+
+    .cta-block p {
+        font-size: 15px;
+    }
+
+    .cta-block button {
+        width: 100%;
+        padding: 16px;
+    }
+
+    /* CASE STUDIES */
+    .cta-dark {
+        border-radius: 24px;
+        margin: 16px;
+        padding: 10px 0;
+    }
+
+    .cta-block2 {
+        margin: 20px auto;
+        padding: 0 20px;
+    }
+
+    .cta-block2 p {
+        font-size: 15px;
+    }
+
+    .divider {
+        width: 90%;
+        height: 1px;
+    }
+
+    /* PROCESS */
+    .processcard {
+        margin: 10px 16px;
+        padding: 24px 20px;
+        border-radius: 20px;
+    }
+
+    .processcontent {
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
+    .content {
+        gap: 12px;
+    }
+
+    .content h1 {
+        font-size: 28px;
+        min-width: auto;
+    }
+
+    .content p {
+        font-size: 16px;
+    }
+
+    .toggleBtn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .toggleBtn i {
+        font-size: 18px;
+    }
+
+    .process-hr {
+        margin: 20px 0;
+    }
+
+    .text p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    /* TEAM */
+    .team-grid {
+        grid-template-columns: 1fr;
+        margin: 16px;
+    }
+
+    .card-btn {
+        margin: 16px;
+    }
+
+    .card-btn button {
+        width: 100%;
+    }
+
+    /* TESTIMONIALS */
+    .testimonial-wrapper {
+        margin: 16px;
+    }
+
+    .testimonial {
+        border-radius: 24px;
+        padding: 20px 16px 16px;
+    }
+
+    .testimonial-block {
+        flex: 0 0 88%;
+        min-width: 240px;
+    }
+
+    .testimonial-block p {
+        font-size: 14px;
+    }
+
+    .testimonial-block h3 {
+        font-size: 18px;
+    }
+
+    .testimonial-nav {
+        margin-top: 12px;
+        gap: 24px;
+    }
+
+    /* CONTACT FORM */
+    .form-container {
+        margin: 16px;
+        padding: 20px;
+        border-radius: 24px;
+    }
+
+    /* FOOTER */
+    .footer {
+        margin: 16px;
+        border-radius: 24px 24px 0 0;
+    }
+
+    .footer-block {
+        padding: 20px 16px;
+        gap: 16px;
+    }
+
+    .footer-block h1 {
+        font-size: 24px;
+    }
+
+    .nav-links1 {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .nav-links1 li a {
+        font-size: 16px;
+        padding: 6px 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        padding: 16px;
+        gap: 20px;
+    }
+
+    .form {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .form input {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form button {
+        width: 100%;
+        padding: 16px;
+    }
+
+    .submit-btn1 {
+        width: 100%;
+    }
+
+    .divider3 {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .privacy {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 16px;
+        font-size: 14px;
+    }
+}
+
+
+/* ------------------------------------------------
+   SMALL MOBILE — max-width: 480px
+   ------------------------------------------------ */
+@media (max-width: 480px) {
+
+    nav h1 {
+        font-size: 22px;
+    }
+
+    .header h1 {
+        font-size: 26px;
+    }
+
+    .header p {
+        font-size: 14px;
+    }
+
+    .logotypes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .heading h1,
+    .heading2 h1,
+    .heading3 h1,
+    .heading4 h1,
+    .heading5 h1,
+    .heading6 h1 {
+        font-size: 22px;
+    }
+
+    .content h1 {
+        font-size: 24px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    .processcard {
+        margin: 8px 12px;
+        padding: 20px 16px;
+    }
+
+    .testimonial-block {
+        flex: 0 0 95%;
+        min-width: 200px;
+    }
+
+    .cta-block h3 {
+        font-size: 18px;
+    }
+
+    .footer-block h1 {
+        font-size: 20px;
+    }
+}
